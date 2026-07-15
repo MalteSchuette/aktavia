@@ -1,1 +1,18 @@
-<router-outlet />
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar__brand">Aktavia</div>
+
+    <nav class="sidebar__nav">
+      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/inbox" routerLinkActive="active">Posteingang</a>
+      <a routerLink="/cases" routerLinkActive="active">Akten</a>
+      <a routerLink="/deadlines" routerLinkActive="active">Fristen</a>
+      <a routerLink="/dictations" routerLinkActive="active">Diktate</a>
+      <a routerLink="/search" routerLinkActive="active">Suche</a>
+    </nav>
+    </aside>
+
+    <main class="content">
+      <router-outlet />
+    </main>
+</div>

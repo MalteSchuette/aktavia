@@ -1,0 +1,56 @@
+$sidebar-bg: #2b2f36;
+$sidebar-text: #c8cdd4;
+$sidebar-text-active: #ffffff;
+$sidebar-active-bg: rba(255, 255, 255, 0.08);
+$accent: #3d6fd9;
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    flex-shrink: 0;
+    background: $sidebar-bg;
+    color: $sidebar-text;
+    padding: 1.5rem 0.75rem;
+
+    &__brand {
+        color: $sidebar-text-active;
+        font-size: 1.25rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        padding: 0 0.75rem 1.5rem;
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    
+
+        a {
+            color:inherit;
+            text-decoration: none;
+            padding: 0.55rem 0.75rem;
+            border-radius: 6px;
+            white-space: nowrap;
+
+            &:hover {
+                background: $sidebar-active-bg;
+            }
+
+            &:active {
+                background: $sidebar-active-bg;
+                color: $sidebar-text-active;
+                box-shadow: inset 3px 0 0 $accent;
+            }
+        }
+    }
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+}
