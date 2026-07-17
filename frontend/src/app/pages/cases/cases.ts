@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 import { CaseService } from '../../services/case.service';
 import { Case } from '../../models/case'
@@ -12,11 +12,11 @@ import { Case } from '../../models/case'
 })
 export class Cases implements OnInit{
   private CaseService = inject(CaseService);
-  cases: Case [] = [];
+  cases = signal<Case[]>([]);
 
   ngOnInit(): void {
     this.CaseService.getCases().subscribe(data => {
-      this.cases = data;
+      this.cases.set(data);
     })
   }
 }
